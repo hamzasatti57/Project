@@ -1,0 +1,118 @@
+  <section class="section pagegrey">
+            <div class="container">    
+                <div class="title-area text-center">
+                    <h2>Get In Touch <small>If you have any questions about our services, please submit a contact form.</small></h2>
+                    <div class="bread">
+                        <ol class="breadcrumb">
+                            <li><a href="#">Home</a></li>
+                            <li class="active">Contact</li>
+                        </ol>
+                    </div><!-- end bread -->
+                </div><!-- /.pull-right -->
+            </div><!-- end container -->
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-6 col-sm-offset-3">
+                                    <div class="general-title">
+                                        <h4>Contact Form</h4>
+                                        <hr>
+                                    </div><!-- end title -->
+
+                                    <div class="contact_form">
+                                        <div id="message"></div>
+                                       <%= form_with scope: :contact, url: contacts_path, local: true do |form| %>
+ 
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@contact.errors.count, "error") %> prohibited
+        this contact from being saved:
+      </h2>
+      <ul>
+        <% @contact.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= form.label :Name %><br>
+    <%= form.text_field :Name %>
+  </p>
+ 
+  <p>
+    <%= form.label :Email %><br>
+    <%= form.text_field :Email%>
+  </p>
+ 
+<p>
+    <%= form.label :Message %><br>
+    <%= form.text_area :Message%>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', contacts_path %>
+                                    </div>
+
+                                </div><!-- end col -->
+                            </div><!-- end row -->
+
+                            <hr class="largehr">
+
+                            <div class="row text-center">
+                                <div class="col-sm-6">
+                                    <div class="team-desc">
+                                        <h4>Holland Office</h4>
+                                        <small>CATALOG HQ</small>
+                                        <p>PO Box 16122 Collins Street West Victoria 8007 Australia</p>
+                                        <a href="#"><i class="fa fa-phone"></i> +61 3 8376 6284</a><br>
+                                        <a href="#"><i class="fa fa-fax"></i> +61 3 8376 6285</a><br>
+                                        <a href="#"><i class="fa fa-envelope-o"></i> <span class="__cf_email__" data-cfemail="cea7a0a8a18eb7a1bbbcbda7baabe0ada1a3">[email&#160;protected]</span></a>
+                                    </div><!-- end team-image -->
+                                </div><!-- end col -->
+
+                                <div class="col-sm-6">
+                                    <div class="team-desc">
+                                        <h4>Australia Office</h4>
+                                        <small>POSTAL MAIL ADDRESS</small>
+                                        <p>121 King Street, Melbourne Victoria 3000 Australia.</p>
+                                        <a href="#"><i class="fa fa-phone"></i> +61 3 8376 6284</a><br>
+                                        <a href="#"><i class="fa fa-fax"></i> +61 3 8376 6285</a><br>
+                                        <a href="#"><i class="fa fa-envelope-o"></i> <span class="__cf_email__" data-cfemail="650c0b030a251c0a1017160c11004b060a08">[email&#160;protected]</span></a>
+                                    </div><!-- end team-image -->
+                                </div><!-- end col -->
+                            </div><!-- end row -->
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+                </div><!-- end content -->
+            </div>
+        </section>
+
+        <div class="googlemap">
+            <div id="map"></div>
+        </div><!-- end googlemap -->
+
+        <section class="section nopad">
+            <div class="container-fluid">    
+                <div class="content-message">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1 text-center">
+                            <h2>See why over 10,000 photographers, artists, graphic designers and app developers trust Catalog.<br> Ready to take your marketplace to the next level?</h2>
+                            <a href="#" class="btn btn-primary btn-lg">Join us Today</a>
+                        </div>
+                    </div><!-- end row -->
+                </div><!-- end content message -->
+            </div><!-- end container -->
+        </section>

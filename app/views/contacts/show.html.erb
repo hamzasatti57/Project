@@ -1,0 +1,17 @@
+<p>
+  <strong>Name:</strong>
+  <%= @contact.Name %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @contact.Email %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @contact.Message %>
+</p>
+
+<%= link_to 'Edit', edit_contact_path(@contact) %> |
+<%= link_to 'Back', contacts_path %>
