@@ -1,23 +1,31 @@
+ <section class="section">
+      <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+      <div class="general-title">
 <h1>Listing Contacts</h1>
  
-<table>
+<table id = "contacts">
+  <thead>
   <tr>
     <th>Name</th>
     <th>Email</th>
     <th>Message</th>
     <th colspan="2"></th>
   </tr>
- 
+ </thead>
+ <tbody>
   <% @contacts.each do |contact| %>
     <tr>
-      <td><%= contact.Name %></td>
-      <td><%= contact.Email %></td>
-            <td><%= contact.Message %></td>
+      <td><%= contact.name %></td>
+      <td><%= contact.message %></td>
       <td><%= link_to 'Show', contact_path(contact) %></td>
       <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-      <td><%= link_to 'Destroy', contact_path(contact),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+      
     </tr>
   <% end %>
+  </tbody>
 </table>
+                          </div><!-- end col -->
+                      </div><!-- end row -->
+                  </div><!-- end content -->
+              </section>

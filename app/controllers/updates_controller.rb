@@ -1,42 +1,51 @@
 class UpdatesController < ApplicationController
-
-def index
-  @photos = Update.all
- end
-
- #New action for creating a new photo
- def new
-  @photo = Update.new
- end
-
-  def destroy
-  @photo = Update.find(params[:id])
-    if @photo.destroy
-      flash[:notice] = "Successfully deleted photo!"
-      redirect_to root_path
-    else
-      flash[:alert] = "Error deleting photo!"
-    end
+	def new
+	  @update = Update.new
   end
 
- #Create action ensures that submitted photo gets created if it meets the requirements
- def create
-  @photo = Update.new(photo_params)
-  if @photo.save
-   flash[:notice] = "Successfully added new photo!"
-   redirect_to @photo
+ def index
+    @updates = Update.all
+  end
+ 
+  def show
+    @update = Update.find(params[:id])
+  end
+
+  def edit
+  @update = Update.find(params[:id])
+end
+
+  def create
+  @update = Update.new(update_params)
+ 
+  if @update.save
+    redirect_to @update
   else
-   flash[:alert] = "Error adding new photo!"
-   render :new
+    render 'new'
   end
- end
+end
 
- private
+ 
+def update
+  @update = Update.find(params[:id])
+ 
+  if @update.update(update_params)
+    redirect_to @update
+  else
+    render 'edit'
+  end
+end
 
- #Permitted parameters when creating a photo. This is used for security reasons.
- def photo_params
-  params.require(:photo).permit(:Name, :Age, :Address , :image)
- end
+def destroy
+  @update = Update.find(params[:id])
+  @update.destroy
+ 
+  redirect_to updates_path
+end
 
+private
+  def update_params
+    params.require(:update).permit(:name, :user_name ,:image, :age, :gender ,:company , :location , :phone ,:description ,:website)
+  end
 
 end

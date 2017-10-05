@@ -6,6 +6,12 @@ git_source(:github) do |repo_name|
 end
 
 gem "paperclip", "~> 5.0.0"
+gem 'devise'
+
+gem 'jquery-rails'
+
+gem "paperclip", "~> 5.0.0"
+
 gem 'font-awesome-sass'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

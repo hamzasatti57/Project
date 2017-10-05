@@ -1,0 +1,57 @@
+  <%= form_for @update, html: { multipart: true } do |f| %>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :user_name %><br>
+    <%= f.text_field :user_name %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div>
+
+<div class="form-group">
+    <%= f.label :age %><br>
+    <%= f.text_field :age %>
+  </div>
+
+  <div class="form-group">
+      <%= f.label :Gender %><br>
+      Male<%= f.radio_button :gender, 'Male' %>
+      Female<%= f.radio_button :gender, 'Female' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :company %><br>
+    <%= f.text_field :company %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :location %><br>
+    <%= f.text_field :location%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description %><br>
+    <%= f.text_area :description%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :website %><br>
+    <%= f.text_field :website%>
+  </div>
+
+  <div class="form-group">
+        <%= f.submit 'Upload Updates' %>
+    </div>
+<% end %>

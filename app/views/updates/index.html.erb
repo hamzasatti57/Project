@@ -1,17 +1,49 @@
-#app/views/photos/index.html.erb
+<section class="section">
+      <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+      <div class="general-title">
+<h1>Listing updates</h1>
+ 
+<table id = "updates">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>User Name</th>
+    <th>Image</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Company</th>
+    <th>Location</th>
+    <th>Phone</th>
+    <th>Description</th>
+    <th>Website</th>
+    <th colspan="2"></th>
+  </tr>
+ </thead>
+ <tbody>
+  <% @updates.each do |update| %>
+    <tr>
+      <td><%= update.name %></td>
+      <td><%= update.user_name %></td>
+      <td><%= link_to image_tag(update.image.url, class: '')%></td>
+      <td><%= update.age %></td>
+      <td><%= update.gender %></td>
+      <td><%= update.company %></td>
+      <td><%= update.location %></td>
+      <td><%= update.phone %></td>
+      <td><%= update.description %></td>
+      <td><%= update.website %></td>
+      <td><%= link_to 'Show', update_path(update) %></td>
+      <td><%= link_to 'Edit', edit_update_path(update) %></td>
+      <td><%= link_to 'Destroy', update_path(update),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
 
-<div class="page-header"><h1>Photos</h1></div>
-
-<div class="media">
-  <% @photos.each do |photo| %>
-    <div class="media-left">
-      <!-- Renders image -->
-      <%= link_to image_tag(photo.image.url, class: 'media-object'), photo.image.url, target: '_blank' %>
-      <!-- Button to delete image -->
-      <%= link_to 'Remove', photo_path(photo), class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure?'} %>
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading"><%= photo.title %></h4>
-    </div>
+    </tr>
   <% end %>
-</div>
+  </tbody>
+</table>
+                          </div><!-- end col -->
+                      </div><!-- end row -->
+                  </div><!-- end content -->
+              </section>

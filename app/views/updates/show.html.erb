@@ -1,0 +1,65 @@
+<section class="section">
+   <div class="row">
+     <div class="col-sm-6 col-sm-offset-3">
+      <div class="general-title">
+<p>
+  <strong>Name:</strong>
+  <%= @update.name %>
+</p>
+ 
+<p>
+  <strong>User Name:</strong>
+  <%= @update.user_name %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <p>
+<%= link_to image_tag(@update.image.url, class: '')%>
+  
+</p>
+
+
+<p>
+  <strong>Age:</strong>
+  <%= @update.age %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @update.gender %>
+</p>
+
+<p>
+  <strong>Cmpany:</strong>
+  <%= @update.company %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @update.location %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @update.phone %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @update.description %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @update.website %>
+</p>
+
+
+<%= link_to 'Edit', edit_update_path(@update) %> |
+<%= link_to 'Back', updates_path %>
+
+     </div><!-- end col -->
+   </div><!-- end row -->
+  </div><!-- end content -->
+</section>

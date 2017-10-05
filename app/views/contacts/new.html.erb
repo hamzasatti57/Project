@@ -25,43 +25,8 @@
                                     </div><!-- end title -->
 
                                     <div class="contact_form">
-                                        <div id="message"></div>
-                                       <%= form_with scope: :contact, url: contacts_path, local: true do |form| %>
  
-  <% if @contact.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@contact.errors.count, "error") %> prohibited
-        this contact from being saved:
-      </h2>
-      <ul>
-        <% @contact.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
- 
-  <p>
-    <%= form.label :Name %><br>
-    <%= form.text_field :Name %>
-  </p>
- 
-  <p>
-    <%= form.label :Email %><br>
-    <%= form.text_field :Email%>
-  </p>
- 
-<p>
-    <%= form.label :Message %><br>
-    <%= form.text_area :Message%>
-  </p>
-
-  <p>
-    <%= form.submit %>
-  </p>
- 
-<% end %>
+  <%= render 'form' %>
  
 <%= link_to 'Back', contacts_path %>
                                     </div>
