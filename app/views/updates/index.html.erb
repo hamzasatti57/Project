@@ -35,7 +35,7 @@
       <td><%= update.website %></td>
       <td><%= link_to 'Show', update_path(update) %></td>
       <td><%= link_to 'Edit', edit_update_path(update) %></td>
-      <td><%= link_to 'Destroy', update_path(update),
+      <td><%= button_to 'Destroy', update_path(update),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
 

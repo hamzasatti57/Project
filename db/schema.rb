@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171005112015) do
+ActiveRecord::Schema.define(version: 20171005142443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,33 @@ ActiveRecord::Schema.define(version: 20171005112015) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.index ["user_id"], name: "index_contacts_on_user_id"
+  end
+
+  create_table "projs", force: :cascade do |t|
+    t.string "item_level"
+    t.string "category"
+    t.string "name"
+    t.string "description"
+    t.string "layered"
+    t.string "layout"
+    t.string "high_resolution"
+    t.string "live_demo"
+    t.string "tags"
+    t.decimal "price"
+    t.string "comment"
+    t.boolean "licence"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.string "file_file_name"
+    t.string "file_content_type"
+    t.integer "file_file_size"
+    t.datetime "file_updated_at"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_projs_on_user_id"
   end
 
   create_table "updates", force: :cascade do |t|
@@ -60,4 +87,5 @@ ActiveRecord::Schema.define(version: 20171005112015) do
   end
 
   add_foreign_key "contacts", "users"
+  add_foreign_key "projs", "users"
 end

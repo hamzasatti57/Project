@@ -1,2 +1,0 @@
-class UpdateProfile < ApplicationRecord
-end
