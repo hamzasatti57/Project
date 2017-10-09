@@ -1,0 +1,51 @@
+ <section class="section">
+      <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+      <div class="general-title">
+<h1>Listing orders</h1>
+ 
+<table id = "orders">
+  <thead>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Company</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Postal Code</th>
+    <th>Countary</th>
+    <th>Modify</th>
+    <th>Email</th>
+    <th>Time</th>
+
+    
+    <th colspan="2"></th>
+  </tr>
+ </thead>
+ <tbody>
+  <% @orders.each do |order| %>
+    <tr>
+      <td><%= order.first_name %></td>
+      <td><%= order.last_name %></td>
+      <td><%= order.company %></td>
+      <td><%= order.city %></td>
+      <td><%= order.state %></td>
+      <td><%= order.postal_code %></td>
+      <td><%= order.country %></td>
+      <td><%= order.modify %></td>
+      <td><%= order.user.email %></td>
+      <td><%= order.created_at %></td>
+
+      <td><%= link_to 'Show', order_path(order) %></td>
+      <td><%= link_to 'Edit', edit_order_path(order) %></td>
+      <td><%= button_to 'Destroy', order_path(order),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+                          </div><!-- end col -->
+                      </div><!-- end row -->
+                  </div><!-- end content -->
+              </section>

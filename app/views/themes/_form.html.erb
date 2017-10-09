@@ -1,0 +1,79 @@
+<%= form_for @theme, html: { multipart: true } do |f| %>
+
+  <div class="form-group">
+    <%= f.label :item_level %><br>
+<%= f.select :item_level, [['Professional','Professional'],['Student','Student']] %>  </div>
+
+  <div class="form-group">
+    <%= f.label :category %><br>
+<%= f.select :category, [['eCOMMERCE','eCOMMERCE'],['STATIC_WEB_APPLICATION','STATIC_WEB_APPLICATION'],['DYNAMIC_WEB_APPLICATION','DYNAMIC_WEB_APPLICATION'],['PORTAL_WEB_APP','PORTAL_WEB_APP'],['ANIMATED_WEB_APPLICATION','ANIMATED_WEB_APPLICATION'],['MANAGEMENT_SYSTEM','MANAGEMENT_SYSTEM 	']] %> 
+ </div>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+<div class="form-group">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="form-group"> 	
+    <%= f.label :file %><br>
+    <%= f.file_field :file %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :image %><br>
+    <%= f.file_field :image%>
+  </div>
+
+
+  <div class="form-group">
+      <%= f.label :layered %><br>
+      Yes<%= f.radio_button :layered, 'Yes' %>
+      No<%= f.radio_button :layered, 'No' %>
+  </div>
+
+
+  <div class="form-group">
+      <%= f.label :layout %><br>
+      <%= f.select :layout, [['None','None'],['Fixed','Fixed'],['Liquid','Liquid'],['Responsive','Responsive']] %>
+  </div>
+
+  <div class="form-group">
+      <%= f.label :high_resolution %><br>
+      Yes<%= f.radio_button :high_resolution, 'Yes' %>
+      No<%= f.radio_button :high_resolution, 'No' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :live_demo %><br>
+    <%= f.text_field :live_demo%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :tags %><br>
+    <%= f.text_area :tags%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :price %><br>
+    <%= f.text_field :price%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :comment %><br>
+    <%= f.text_area :comment%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :licence %><br>
+    <%= f.radio_button :licence, 'OK' %>I accept the licemnce agreement.
+  </div>
+
+  <div class="form-group">
+        <%= f.submit 'Upload themes' %>
+    </div>
+<% end %>

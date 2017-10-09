@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171005142443) do
+ActiveRecord::Schema.define(version: 20171009085202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,125 @@ ActiveRecord::Schema.define(version: 20171005142443) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.index ["user_id"], name: "index_contacts_on_user_id"
+  end
+
+  create_table "icons", force: :cascade do |t|
+    t.string "item_level"
+    t.string "category"
+    t.string "name"
+    t.string "description"
+    t.string "layered"
+    t.string "layout"
+    t.string "high_resolution"
+    t.string "live_demo"
+    t.string "tags"
+    t.decimal "price"
+    t.string "comment"
+    t.boolean "licence"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.string "file_file_name"
+    t.string "file_content_type"
+    t.integer "file_file_size"
+    t.datetime "file_updated_at"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_icons_on_user_id"
+  end
+
+  create_table "mobapps", force: :cascade do |t|
+    t.string "item_level"
+    t.string "category"
+    t.string "name"
+    t.string "description"
+    t.string "layered"
+    t.string "layout"
+    t.string "high_resolution"
+    t.string "live_demo"
+    t.string "tags"
+    t.decimal "price"
+    t.string "comment"
+    t.boolean "licence"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.string "file_file_name"
+    t.string "file_content_type"
+    t.integer "file_file_size"
+    t.datetime "file_updated_at"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.index ["user_id"], name: "index_mobapps_on_user_id"
+  end
+
+  create_table "mores", force: :cascade do |t|
+    t.string "item_level"
+    t.string "category"
+    t.string "name"
+    t.string "description"
+    t.string "layered"
+    t.string "layout"
+    t.string "high_resolution"
+    t.string "live_demo"
+    t.string "tags"
+    t.decimal "price"
+    t.string "comment"
+    t.boolean "licence"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.string "file_file_name"
+    t.string "file_content_type"
+    t.integer "file_file_size"
+    t.datetime "file_updated_at"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.index ["user_id"], name: "index_mores_on_user_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "company"
+    t.string "city"
+    t.string "state"
+    t.decimal "postal_code"
+    t.string "country"
+    t.string "modify"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string "item_level"
+    t.string "category"
+    t.string "name"
+    t.string "description"
+    t.string "layered"
+    t.string "layout"
+    t.string "high_resolution"
+    t.string "live_demo"
+    t.string "tags"
+    t.decimal "price"
+    t.string "comment"
+    t.boolean "licence"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.index ["user_id"], name: "index_photos_on_user_id"
   end
 
   create_table "projs", force: :cascade do |t|
@@ -51,6 +170,87 @@ ActiveRecord::Schema.define(version: 20171005142443) do
     t.index ["user_id"], name: "index_projs_on_user_id"
   end
 
+  create_table "scripts", force: :cascade do |t|
+    t.string "item_level"
+    t.string "category"
+    t.string "name"
+    t.string "description"
+    t.string "layered"
+    t.string "layout"
+    t.string "high_resolution"
+    t.string "live_demo"
+    t.string "tags"
+    t.decimal "price"
+    t.string "comment"
+    t.boolean "licence"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.string "file_file_name"
+    t.string "file_content_type"
+    t.integer "file_file_size"
+    t.datetime "file_updated_at"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_scripts_on_user_id"
+  end
+
+  create_table "textures", force: :cascade do |t|
+    t.string "item_level"
+    t.string "category"
+    t.string "name"
+    t.string "description"
+    t.string "layered"
+    t.string "layout"
+    t.string "high_resolution"
+    t.string "live_demo"
+    t.string "tags"
+    t.decimal "price"
+    t.string "comment"
+    t.boolean "licence"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.string "file_file_name"
+    t.string "file_content_type"
+    t.integer "file_file_size"
+    t.datetime "file_updated_at"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.index ["user_id"], name: "index_textures_on_user_id"
+  end
+
+  create_table "themes", force: :cascade do |t|
+    t.string "item_level"
+    t.string "category"
+    t.string "name"
+    t.string "description"
+    t.string "layered"
+    t.string "layout"
+    t.string "high_resolution"
+    t.string "live_demo"
+    t.string "tags"
+    t.decimal "price"
+    t.string "comment"
+    t.boolean "licence"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.string "file_file_name"
+    t.string "file_content_type"
+    t.integer "file_file_size"
+    t.datetime "file_updated_at"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_themes_on_user_id"
+  end
+
   create_table "updates", force: :cascade do |t|
     t.string "name"
     t.string "user_name"
@@ -67,6 +267,8 @@ ActiveRecord::Schema.define(version: 20171005142443) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_updates_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -86,6 +288,43 @@ ActiveRecord::Schema.define(version: 20171005142443) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "webapis", force: :cascade do |t|
+    t.string "item_level"
+    t.string "category"
+    t.string "name"
+    t.string "description"
+    t.string "layered"
+    t.string "layout"
+    t.string "high_resolution"
+    t.string "live_demo"
+    t.string "tags"
+    t.decimal "price"
+    t.string "comment"
+    t.boolean "licence"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.string "file_file_name"
+    t.string "file_content_type"
+    t.integer "file_file_size"
+    t.datetime "file_updated_at"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_webapis_on_user_id"
+  end
+
   add_foreign_key "contacts", "users"
+  add_foreign_key "icons", "users"
+  add_foreign_key "mobapps", "users"
+  add_foreign_key "mores", "users"
+  add_foreign_key "orders", "users"
+  add_foreign_key "photos", "users"
   add_foreign_key "projs", "users"
+  add_foreign_key "scripts", "users"
+  add_foreign_key "textures", "users"
+  add_foreign_key "themes", "users"
+  add_foreign_key "updates", "users"
+  add_foreign_key "webapis", "users"
 end

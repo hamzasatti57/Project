@@ -1,6 +1,11 @@
 class UpdatesController < ApplicationController
 	def new
-	  @update = Update.new
+	 if 
+
+    @update = Update.find_by_id(current_user.id)
+   else
+    @update = Update.new
+end
   end
 
  def index
@@ -11,28 +16,21 @@ class UpdatesController < ApplicationController
     @update = Update.find(params[:id])
   end
 
-  def edit
-  @update = Update.find(params[:id])
-end
-
   def create
-  @update = Update.new(update_params)
- 
-  if @update.save
-    redirect_to @update
-  else
-    render 'new'
-  end
-end
+    if  @update = current_user.updates.find_by_id(current_user.id)
+   
+      if @update.update(update_params)
+        redirect_to @update
+      else
 
- 
-def update
-  @update = Update.find(params[:id])
- 
-  if @update.update(update_params)
-    redirect_to @update
-  else
     render 'edit'
+  end
+  else 
+
+    @update = Update.new(update_params)
+    @update.user_id = current_user.id
+    @update.save!
+    redirect_to contact_path(@update.user_id)
   end
 end
 
@@ -45,7 +43,7 @@ end
 
 private
   def update_params
-    params.require(:update).permit(:name, :user_name ,:image, :age, :gender ,:company , :location , :phone ,:description ,:website)
+    params.require(:update).permit(:user_id,:name, :user_name ,:image, :age, :gender ,:company , :location , :phone ,:description ,:website)
   end
 
 end

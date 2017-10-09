@@ -1,6 +1,7 @@
 class ContactsController < ApplicationController
 
 def new
+  
 	  @contact = Contact.new
   end
 
@@ -18,14 +19,16 @@ end
 
   def create
   @contact = Contact.new(contact_params)
- 
+ @contact.user_id = current_user.id
   if @contact.save
-    redirect_to @contact
+    render '/contacts/message'
   else
     render 'new'
   end
 end
 
+def message  
+end
  
 def update
   @contact = Contact.find(params[:id])
@@ -46,8 +49,7 @@ end
 
 private
   def contact_params
-    params.require(:contact).permit(:name, :message)
+    params.require(:contact).permit(:name, :message , :user_id)
   end
-
 
 end

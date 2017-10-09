@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item_level: MyString
+  category: MyString
+  name: MyString
+  decription: MyString
+  layered: MyString
+  layout: MyString
+  high_resolution: MyString
+  live_demo: MyString
+  tags: MyString
+  price: 
+  comment: MyString
+  licence: false
+
+two:
+  item_level: MyString
+  category: MyString
+  name: MyString
+  decription: MyString
+  layered: MyString
+  layout: MyString
+  high_resolution: MyString
+  live_demo: MyString
+  tags: MyString
+  price: 
+  comment: MyString
+  licence: false

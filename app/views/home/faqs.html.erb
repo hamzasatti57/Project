@@ -19,7 +19,8 @@
                     <div class="page-content">
                         <div class="row">
                             <div class="col-md-8 col-md-offset-2 general-title">
-                                <h4>Friendly Asked Questions <span class="hidden-xs"><a> @Html.ActionLink("Other Issues? Send us Email", "Contact", "Contacts", new {area = "" }, new {@class = "" })</a></span></h4>
+                                <h4>Friendly Asked Questions <span class="hidden-xs"><a> 
+                                    <%= link_to "Other Issues? Send us Email", new_contact_path %></a></span></h4>
                                 <hr>
                             </div><!-- end col -->
                         </div><!-- end row -->

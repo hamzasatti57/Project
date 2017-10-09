@@ -22,4 +22,10 @@ class HomeController < ApplicationController
  
   end
 
+  def user
+  end
+
+  def type
+  end
+
 end

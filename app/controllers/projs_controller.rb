@@ -16,7 +16,7 @@ class ProjsController < ApplicationController
 end
 
   def create
-  @proj = Proj.new(proj_params)
+  @proj = current_user.projs.new(proj_params)
  
   if @proj.save
     redirect_to @proj
@@ -45,6 +45,6 @@ end
 
 private
   def proj_params
-    params.require(:proj).permit(:item_level , :category ,:name, :description , :file ,:image, :layered, :layout ,:high_resolution , :live_demo , :tags ,:price ,:comment , :licence)
+    params.require(:proj).permit(:user_id,:item_level , :category ,:name, :description , :file ,:image, :layered, :layout ,:high_resolution , :live_demo , :tags ,:price ,:comment , :licence)
   end
 end

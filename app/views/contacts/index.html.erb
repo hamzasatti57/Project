@@ -2,7 +2,10 @@
       <div class="row">
       <div class="col-sm-6 col-sm-offset-3">
       <div class="general-title">
+        <div id= "Hamza">
 <h1>Listing Contacts</h1>
+<%= select("contact", "contact_id", Contact.all.collect {|p| [ p.name, p.id ] })%>
+
  
 <table id = "contacts">
   <thead>
@@ -10,6 +13,7 @@
     <th>Name</th>
     <th>Email</th>
     <th>Message</th>
+    <th>Time</th
     <th colspan="2"></th>
   </tr>
  </thead>
@@ -17,15 +21,42 @@
   <% @contacts.each do |contact| %>
     <tr>
       <td><%= contact.name %></td>
+      <td><%= contact.user.email %></td>
       <td><%= contact.message %></td>
+      <td><%= contact.created_at %></td>
+
       <td><%= link_to 'Show', contact_path(contact) %></td>
       <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-      
+      <td><%= button_to 'Destroy', contact_path(contact),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
+</div>
+<div id="user_data"></div> 
                           </div><!-- end col -->
                       </div><!-- end row -->
                   </div><!-- end content -->
               </section>
+
+<script >
+  var e = document.getElementById("contact_contact_id");
+// var strUser = e.options[e.selectedIndex].value;
+$(e).on('change', function() {
+  $.ajax({
+        url: "/contacts/get_contact_data",
+        type: "GET",
+        data: {"user_id" : $('#contact_contact_id').val()},
+        dataType: "html",
+        success: function(data) {
+          $("#Hamza").hide()
+         $("#user_data").html(data)
+        },
+        error: function(){
+           alert('asad')
+        }
+      });
+});
+</script>

@@ -25,7 +25,7 @@
                                 <div class="item-media text-center">
                                     <%= link_to image_tag(@proj.image.url, class: '')%>
                                 </div>
-                                <a href='' class="btn btn-primary btn-block">Demo</a>
+                                <a href='<%= @proj.live_demo %>' class="btn btn-primary btn-block">Demo</a>
                                 <div class="item-desc">
                                     <h4><strong>Description:</strong></h4>
                                     <p> <%= @proj.description %>n)</p>
@@ -72,7 +72,7 @@
                                         <tr>
 
                                             <th>Buy here➩</th>
-                                            <th class="btn btn-primary btn-sm">Order now</th>
+                                            <th class="btn btn-primary btn-sm"><%= link_to "Order now" , new_order_path %></th>
                                         </tr>
                                     </tbody>
                                 </table>
