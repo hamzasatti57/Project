@@ -90,10 +90,10 @@
                             <% @textures.each do |texture| %>
                                 <div class="form-group row wow fadeIn">
                                     <div class="col-sm-2 col-xs-12">
-                                        <a class="" href="~/Views/textureects/Details.cshtml"><%= link_to image_tag(texture.image.url, class: '')%></a>
+                                        <a class="" href="<%= texture_path(texture) %>"<%= link_to image_tag(texture.image.url, class: '')%></a>
                                     </div>
                                     <div class="col-sm-7 col-xs-12">
-                                        <h4><a href=""</a><%= texture.name %></h4>
+                                        <h4><a href="<%= texture_path(texture) %>"></a><%= texture.name %></h4>
                                         <ul>
                                             <li><a href="#"><i class="fa fa-user"></i><%= texture.item_level %></a></li>
                                             <li><a href="#"><i class="fa fa-envelope-o"></i> Get Support</a></li>
@@ -102,7 +102,7 @@
                                     </div>
                                     <div class="col-sm-3 col-xs-12 text-center">
                                         <ul>
-                                            <li><a href="" class="btn btn-primary btn-block">Buy now</a></li>
+                                            <li><a href="<%= texture_path(texture) %>" class="btn btn-primary btn-block">Buy now</a></li>
                                             <li><a style="font-size:20px">$<%= texture.price %></a></li>
                                             <li>
                                                 <div class="rating">

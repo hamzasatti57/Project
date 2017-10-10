@@ -90,10 +90,10 @@
                             <% @themes.each do |theme| %>
                                 <div class="form-group row wow fadeIn">
                                     <div class="col-sm-2 col-xs-12">
-                                        <a class="" href="~/Views/themeects/Details.cshtml"><%= link_to image_tag(theme.image.url, class: '')%></a>
+                                        <a class="" href="<%= theme_path(theme) %>"<%= link_to image_tag(theme.image.url, class: '')%></a>
                                     </div>
                                     <div class="col-sm-7 col-xs-12">
-                                        <h4><a href=""</a><%= theme.name %></h4>
+                                        <h4><a href="<%= theme_path(theme) %>"</a><%= theme.name %></h4>
                                         <ul>
                                             <li><a href="#"><i class="fa fa-user"></i><%= theme.item_level %></a></li>
                                             <li><a href="#"><i class="fa fa-envelope-o"></i> Get Support</a></li>
@@ -102,7 +102,7 @@
                                     </div>
                                     <div class="col-sm-3 col-xs-12 text-center">
                                         <ul>
-                                            <li><a href="" class="btn btn-primary btn-block">Buy now</a></li>
+                                            <li><a href="<%= theme_path(theme) %>" class="btn btn-primary btn-block">Buy now</a></li>
                                             <li><a style="font-size:20px">$<%= theme.price %></a></li>
                                             <li>
                                                 <div class="rating">

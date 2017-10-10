@@ -142,8 +142,9 @@
                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="/assets/upload/member.png" alt="" class="img-circle"> <span class="caret"></span></a>
                                                 <ul class="dropdown-menu">
                                                     <li class="dropdown-header">Profile</li>
-                                                    <li><a href="<%= updates_path %>">Public profile</a></li>
-                                                    <li><a href="<%= new_update_path %>">Edit Account</a></li>
+                                                    <li><a href="<%=  current_user
+                                                     %>">Public profile</a></li>
+                                                    <li><a href="<%= edit_user_registration_path %>">Edit Account</a></li>
                                                     <li><a href="<%= home_type_path %>">Upload Item</a></li>
                                                     <li><%= link_to "Logout" ,destroy_user_session_path ,:method => :delete %></li>
                                                     <li><hr></li>

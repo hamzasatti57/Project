@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+devise_for :users, :controllers => { registrations: 'registrations' }    
+    
     root 'home#index'
+    get 'users/:id' => 'users#show'
     get 'home/about'
     get 'home/ceo'
     get 'home/user'
@@ -33,9 +35,6 @@ end
     resources :scripts
 
     resources :photos
-
-    resources :updates	
-    get 'updates/:id' => 'updates#new'
 
     resources :contacts
 

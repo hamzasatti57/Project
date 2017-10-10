@@ -91,10 +91,10 @@
                             <% @mobapps.each do |mobapp| %>
                                 <div class="form-group row wow fadeIn">
                                     <div class="col-sm-2 col-xs-12">
-                                        <a class="" href="~/Views/mobappects/Details.cshtml"><%= link_to image_tag(mobapp.image.url, class: '')%></a>
+                                        <a class="" href="<%= mobapp_path(mobapp) %>"<%= link_to image_tag(mobapp.image.url, class: '')%></a>
                                     </div>
                                     <div class="col-sm-7 col-xs-12">
-                                        <h4><a href=""</a><%= mobapp.name %></h4>
+                                        <h4><a href="<%= mobapp_path(mobapp) %>"</a><%= mobapp.name %></h4>
                                         <ul>
                                             <li><a href="#"><i class="fa fa-user"></i><%= mobapp.item_level %></a></li>
                                             <li><a href="#"><i class="fa fa-envelope-o"></i> Get Support</a></li>
@@ -103,7 +103,7 @@
                                     </div>
                                     <div class="col-sm-3 col-xs-12 text-center">
                                         <ul>
-                                            <li><a href="" class="btn btn-primary btn-block">Buy now</a></li>
+                                            <li><a href="<%= mobapp_path(mobapp) %>" class="btn btn-primary btn-block">Buy now</a></li>
                                             <li><a style="font-size:20px">$<%= mobapp.price %></a></li>
                                             <li>
                                                 <div class="rating">
