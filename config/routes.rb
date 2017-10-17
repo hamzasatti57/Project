@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 devise_for :users, :controllers => { registrations: 'registrations' }    
     
-    root 'home#index'
-    get 'users/:id' => 'users#show'
+    devise_scope :user do
+  get '/users/sign_out' => 'devise/sessions#destroy'
+end
+        get 'users/:id' => 'users#show'
     get 'home/about'
     get 'home/ceo'
     get 'home/user'
@@ -11,10 +13,7 @@ devise_for :users, :controllers => { registrations: 'registrations' }
     get 'home/faqs'
     get 'home/favourite'
     get 'home/blog'
-
-    devise_scope :user do
-  get '/users/sign_out' => 'devise/sessions#destroy'
-end
+    root 'home#index'
 
     resources :orders
 

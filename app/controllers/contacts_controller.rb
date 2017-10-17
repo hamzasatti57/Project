@@ -27,6 +27,11 @@ end
   end
 end
 
+def get_contact_data
+contact = Contact.find(params[:contact_id])
+render :partial => 'data',:locals => {:contact => contact}
+end
+
 def message  
 end
  

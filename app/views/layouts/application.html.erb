@@ -146,7 +146,7 @@
                                                      %>">Public profile</a></li>
                                                     <li><a href="<%= edit_user_registration_path %>">Edit Account</a></li>
                                                     <li><a href="<%= home_type_path %>">Upload Item</a></li>
-                                                    <li><%= link_to "Logout" ,destroy_user_session_path ,:method => :delete %></li>
+                                                    <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
                                                     <li><hr></li>
                                                     <li class="dropdown-header">Dashboard</li>
                                                     <li><a href="<%= home_favourite_path %>">Shop Favourite</a></li>

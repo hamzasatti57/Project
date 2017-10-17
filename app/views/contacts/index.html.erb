@@ -13,7 +13,7 @@
     <th>Name</th>
     <th>Email</th>
     <th>Message</th>
-    <th>Time</th
+    <th>Time</th>
     <th colspan="2"></th>
   </tr>
  </thead>
@@ -48,14 +48,14 @@ $(e).on('change', function() {
   $.ajax({
         url: "/contacts/get_contact_data",
         type: "GET",
-        data: {"user_id" : $('#contact_contact_id').val()},
+        data: {"contact_id" : $('#contact_contact_id').val()},
         dataType: "html",
         success: function(data) {
           $("#Hamza").hide()
          $("#user_data").html(data)
         },
         error: function(){
-           alert('asad')
+           alert('error')
         }
       });
 });

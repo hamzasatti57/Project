@@ -1,0 +1,23 @@
+<table>
+ <thead>
+  <tr>
+     <th>Name</th>
+    <th>Email</th>
+    <th>Message</th>
+    <th>Time</th>
+    <th colspan="2"></th>
+  </tr>
+ </thead>
+ <tbody>
+    <tr>
+       <td><%= contact.name %></td>
+      <td><%= contact.user.email %></td>
+      <td><%= contact.message %></td>
+      <td><%= contact.created_at %></td>
+
+      <td><%= link_to 'Show', contact_path(contact) %></td>
+      <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+    
+    </tr> 
+  </tbody>
+</table>
